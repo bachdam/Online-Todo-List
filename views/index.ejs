@@ -20,9 +20,23 @@
         <div class="item">
           <input type="checkbox">
           <p>
-            
+            Study
           </p>
         </div>
+
+        <% for (let i=0; i<newItems.length; i++) { %>
+        <div class="item">
+          <input type="checkbox">
+          <p>
+            <%= newItems[i] %>
+          </p>
+        </div>
+        <% } %>
+
+        <form class="item" action="/" method="post">
+          <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
+          <button type="submit" name="list" value=Work List >+</button>
+        </form>
       </div>
       
         
