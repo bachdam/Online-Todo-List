@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 let newTasks = [];
+let newTasksMonth = [];
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,6 +28,22 @@ app.post("/", (req, res) => {
   let newTask = req.body.newItem;
   newTasks.push(newTask);
   res.redirect("/");
+});
+
+app.get("/thisMonth", (req, res) => {
+  res.render("thisMonth.ejs", {
+    currentDay: "This month",
+    newItemsMonth: newTasksMonth,
+  });
+});
+
+app.post("/thisMonth", (req, res) => {
+  let newTaskMonth = req.body.newItemsMonth;
+  newTasksMonth.push(newTaskMonth);
+  res.render("thisMonth.ejs", {
+    newItemsMonth: newTasksMonth,
+    currentDay: "This month",
+  });
 });
 
 app.listen(port, () => {

@@ -1,3 +1,7 @@
+*{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -11,19 +15,21 @@ body {
 
 #box {
     max-width: 600px;
-    margin: 50px auto;
-    background: white;
+    align-self:center;
+    margin-block:40px;
+    background-color:rgb(255 239 221);
     border-radius: 5px;
-    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 15px -5px rgb(141, 123, 104);
     border-radius:15px;
-    background-color: rgb(255, 251, 241);
+    background-color: 8D7B68;
 }
 
 #today{
     text-align: center;
+    color:rgb(241, 222, 201);
     max-width: 500px;
-    border: 15px solid lightskyblue;
-    background-color: lightskyblue;
+    border: 15px solid rgb(141, 123, 104);
+    background-color: rgb(141, 123, 104);
     border-radius: 15px;
     padding: 10px;
 }
@@ -32,8 +38,39 @@ body {
     min-height: 70px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid rgb(141, 123, 104);
     border-radius: 15px;
     padding-left:20px;
   }
 
+  .webflow-style-input{
+    justify-content:center
+}
+input[type="text"] {
+    text-align: center;
+    height: 60px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    width: 313px;
+}
+
+button[type="submit"]{
+    background-color: rgb(141, 123, 104);
+    border-radius: 50%;
+    min-width:45px;
+    min-height:45px;
+    border-color:transparent
+}
+
+.item p {
+    padding-top:15px;
+    padding-left:20px;
+}
+
+input:checked + p {
+    text-decoration: line-through;
+    text-decoration-color: rgb(141, 123, 104);
+  }
