@@ -2,6 +2,59 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
+
+.topnav {
+    overflow: hidden;
+   
+  }
+  
+  .topnav a {
+    float: left;
+    color: rgb(141, 123, 104);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+  }
+  
+  .topnav a.active {
+    background-color: rgb(255 239 221);
+    color: rgb(141, 123, 104);
+  }
+li{
+    position: relative;
+    display: inline-block;
+    margin-bottom: none;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  li::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left:0;
+    transition: transform 0.5;
+    transform: scaleX(0);
+    transform-origin: right;
+    border-bottom: 3px solid lightsalmon;
+  }
+
+  li:hover{
+    color: white;
+  }
+
+  li:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
 body {
     display: flex;
     flex-direction: column;
@@ -79,19 +132,4 @@ input:checked + p {
   .nav-link a.active {
     background-color: #04AA6D;
     color: white;
-  }
-
-  li{
-    position: relative;
-    display: block;
-    transition: 0.5s;
-    cursor: pointer;
-  }
-
-  li::after{
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 3px;
-    top: 100%;
   }
